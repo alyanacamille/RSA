@@ -1,12 +1,12 @@
 #keys#
 public_key = (21721, 113)
 private_key = (21412, 14401)
+encrypted_message = ("")
+decrypted_message = ("")
 
-e = 113
-n = 21721
-d = 14401
-
-encrypted_message = ""
+e = ("")
+n = ("")
+d = ("")
 
 #starting message#
 def rsa():
@@ -18,46 +18,48 @@ def rsa():
         print ("")
         print ("you chose to encrypt")
         print ("")
-        encrypt()
+        encrypt(e,n)
     elif answer == 'd' or answer == 'D':
         print ("")
         print ("you chose to decrypt")
         print ("")
-        decrypt()
+        decrypt(d,n)
     else:
         print ("")
         print ("answer not found, try again")
         rsa()
   
-#encryption function#      
-def encrypt():
+#encryption function#
+def encrypt(e,n):
     print ("to encrypt please give the following:")
     e = input("enter 'e' value: ")
     n = input("enter 'n' value: ")   
     print ("") 
     print ("enter the message you would like to encrypt:")
-    answer = input
-
-for input in encrypted_message:
-  
-    numerize = ord(input)
-    encrypt = pow(numerize, e, n)
-    denumerize = chr(encrypt)
-    encrypted_message += denumerize
+    answer = input()
     
+for answer in input():
+  numerize = ord(answer)
+  encrypt = pow(numerize, e, n)
+  denumerize = chr(encrypt)
+  encrypted_message += denumerize
+
 print encrypted_message
 
 #decryption funcation#
-
-def decrypt():
+def decrypt(d,n):
+  print ("to decrypt please give the following:")
+  d = input("enter 'd' value: ")
+  n = input("enter 'n' value: ")   
+  print ("") 
+  print ("enter the message you would like to decrypt:")
+  answer = input()
+for t in encrypted_message:
+  numerize = ord(t)
+  denumerize = pow(numerize, d, n)
+  denumerize = chr(decrypt)
+  decrypted_message += denumerize
   
-
-        numerize = ord(input)
-        decrypt = pow(numerize, d, n)
-        denumerize = chr(decrypt)
-        decrypted_message += denumerize
-        
-print decrypted_message()
-
-##
-rsa()
+  print decrypted_message
+###
+  rsa()
